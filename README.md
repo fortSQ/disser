@@ -1,1 +1,5 @@
-# disser
+# Магистерская диссертация
+
+```php
+composer install
+```
