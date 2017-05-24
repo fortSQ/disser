@@ -1,0 +1,31 @@
+<? require_once 'layout/header.phtml' ?>
+
+<h3 class="mb-4">Добавление нового товара</h3>
+
+<form>
+    <? foreach (['Название', 'Штрих-код', 'Вес (грамм)', 'Длина (см)', 'Ширина (см)', 'Высота (см)'] as $item): ?>
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label"><?= $item ?></label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" placeholder="<?= $item ?>">
+            </div>
+        </div>
+    <? endforeach ?>
+    <div class="form-group row">
+        <label class="col-md-2 col-form-label">Тип</label>
+        <div class="col-md-10">
+            <select class="form-control custom-select">
+                <? foreach ($config['product_types'] as $option): ?>
+                    <option><?= $option ?></option>
+                <? endforeach ?>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-md-2 col-md-10">
+            <button type="submit" class="btn btn-outline-primary"><i class="fa fa-save"></i> Сохранить</button>
+        </div>
+    </div>
+</form>
+
+<? require_once 'layout/footer.phtml' ?>

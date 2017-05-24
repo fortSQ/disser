@@ -20,8 +20,13 @@
     <a class="navbar-brand" href="#"><i class="fa fa-bank"></i> СКЛАД</a>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-dropbox"></i> Товары</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-dropbox"></i> Товары</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="product_add.phtml">Добавление нового</a>
+                    <a class="dropdown-item" href="product_edit.phtml">Неразмещённые</a>
+                    <a class="dropdown-item" href="product_list.phtml">На складе</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fa fa-cart-arrow-down"></i> Сбор</a>

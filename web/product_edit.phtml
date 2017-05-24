@@ -1,0 +1,52 @@
+<? require_once 'layout/header.phtml' ?>
+<? /** @var array $config */?>
+
+<h3 class="mb-4">Редактирование товара 1Z2XA1500320961170 <small>(приём от 12.07.2017 11:28)</small></h3>
+
+<?
+$data = [
+    'Название'      => 'Планшет Samsung',
+    'Вес (грамм)'   => 680,
+    'Длина (см)'    => 31.2,
+    'Ширина (см)'   => 10.6,
+    'Высота (см)'   => 5.0,
+];
+?>
+
+<form>
+    <? foreach ($data as $key => $value): ?>
+        <div class="form-group row">
+            <label class="col-md-2 col-form-label"><?= $key ?></label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" placeholder="<?= $key ?>" value="<?= $value ?>">
+            </div>
+        </div>
+    <? endforeach ?>
+    <div class="form-group row">
+        <label class="col-md-2 col-form-label">Тип</label>
+        <div class="col-md-10">
+            <select class="form-control custom-select">
+                <? foreach ($config['product_types'] as $option): ?>
+                    <option <? if ($option == 'Почтовая'): ?>selected<? endif ?>><?= $option ?></option>
+                <? endforeach ?>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 col-form-label">Ячейка</label>
+        <div class="col-md-10">
+            <select class="form-control custom-select">
+                <? foreach ($config['cells'] as $cell): ?>
+                    <option <? if ($cell == 'A.67.2.5'): ?>selected<? endif ?>><?= $cell ?></option>
+                <? endforeach ?>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-md-2 col-md-10">
+            <button type="submit" class="btn btn-outline-primary"><i class="fa fa-save"></i> Сохранить</button>
+        </div>
+    </div>
+</form>
+
+<? require_once 'layout/footer.phtml' ?>

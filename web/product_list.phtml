@@ -1,0 +1,44 @@
+<? require_once 'layout/header.phtml' ?>
+<? /** @var array $config */?>
+
+<ul class="nav nav-tabs" style="margin-bottom:-1px">
+    <li class="nav-item">
+        <a class="nav-link active" href="#">Ожидают размещения <span class="badge badge-pill badge-default">216</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">На складе <span class="badge badge-pill badge-primary">53</span></a>
+    </li>
+</ul>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Товар</th>
+        <th>Штрих-код</th>
+        <th>Ячейка</th>
+    </tr>
+    </thead>
+    <tbody>
+    <? foreach ($config['goods'] as $product): ?>
+        <? $product = (object) $product ?>
+        <tr>
+            <td><?= $product->name ?></td>
+            <td><?= $product->barcode ?></td>
+            <td>
+                <div class="input-group">
+                    <select class="form-control custom-select">
+                        <? foreach ($config['cells'] as $cell): ?>
+                            <option><?= $cell ?></option>
+                        <? endforeach ?>
+                    </select>
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="button"> Присвоить</button>
+                    </span>
+                </div>
+            </td>
+        </tr>
+    <? endforeach ?>
+    </tbody>
+</table>
+
+<? require_once 'layout/footer.phtml' ?>
