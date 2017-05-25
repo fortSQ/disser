@@ -16,6 +16,11 @@ return [
         TYPE_STORAGE    => 'На хранение'
     ],
 
+    'rooms' => [
+        'A' => 30,
+        'B' => 12,
+    ],
+
     'goods' => [
         [
             'name'          => 'iPhone 7',

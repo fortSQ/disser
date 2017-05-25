@@ -1,0 +1,74 @@
+<? require_once 'layout/header.phtml' ?>
+
+<?
+
+$racks = [];
+foreach ($config['rooms'] as $room => $rackCount) {
+    for ($i = 1; $i <= $rackCount; $i++) {
+        $racks[] = $room . '.' . $i;
+    }
+}
+
+?>
+
+<h3 class="mb-4">Расстояния между стеллажами</h3>
+
+<div class="row">
+    <div class="col-lg-4 form-group">
+        <div class="input-group">
+            <select class="form-control custom-select">
+                <? foreach ($racks as $rack): ?>
+                    <option><?= $rack ?></option>
+                <? endforeach ?>
+            </select>
+            <span class="input-group-btn"><button class="btn btn-outline-danger" type="button"><i class="fa fa-times"></i> Удалить стеллаж</button></span>
+        </div>
+    </div>
+    <div class="col-lg-4 form-group">
+        <a href="#" class="btn btn-outline-success btn-block"><i class="fa fa-plus"></i> Добавить новый</a>
+    </div>
+    <div class="col-lg-4 form-group">
+        <a class="btn btn-outline-primary btn-block" href="product_list.phtml"><i class="fa fa-save"></i> Сохранить</a>
+    </div>
+</div>
+
+
+
+<table class="table table-sm table-hover table-responsive">
+    <thead class="thead-inverse">
+    <tr>
+        <th></th>
+        <? foreach ($racks as $rack): ?>
+            <th><?= $rack ?></th>
+        <? endforeach ?>
+    </tr>
+    </thead>
+    <tbody>
+    <? foreach ($racks as $i => $rackFrom): ?>
+        <tr>
+            <th><?= $rackFrom ?></th>
+            <? foreach ($racks as $j => $rackTo): ?>
+                <td>
+                    <? if ($i == $j): ?>
+                        <strong><?= $rackTo ?></strong>
+                    <? elseif ($i > $j): ?>
+                        &mdash;
+                    <? else: ?>
+                        <input type="text" class="form-control" style="min-width:4em" value="<?= rand(10, 999) / 10 ?>">
+                    <? endif ?>
+                </td>
+            <? endforeach ?>
+        </tr>
+    <? endforeach ?>
+    </tbody>
+    <tfoot class="thead-inverse">
+    <tr>
+        <th></th>
+        <? foreach ($racks as $rack): ?>
+            <th><?= $rack ?></th>
+        <? endforeach ?>
+    </tr>
+    </tfoot>
+</table>
+
+<? require_once 'layout/footer.phtml' ?>
