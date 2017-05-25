@@ -25,7 +25,7 @@ return [
         [
             'name'          => 'iPhone 7',
             'barcode'       => 'WIK8348784ANR464384',
-            'cell'          => 'A.12.6.2',
+            'cell'          => 'A.33.6.2',
             'weight'        => 420,
             'dimension_x'   => 21,
             'dimension_y'   => 15,
@@ -38,7 +38,7 @@ return [
         [
             'name'      => 'T-short Red Alert',
             'barcode'   => 'MDB473746FBSJ3432J4',
-            'cell'      => 'B.2.5.7',
+            'cell'      => 'A.38.5.7',
             'weight'        => 360,
             'dimension_x'   => 28,
             'dimension_y'   => 31,
@@ -51,7 +51,7 @@ return [
         [
             'name'      => 'Costume Happy Family',
             'barcode'   => '9400109699938438421784',
-            'cell'      => 'A.4.1.4',
+            'cell'      => 'A.45.1.4',
             'weight'        => 11833,
             'dimension_x'   => 61,
             'dimension_y'   => 43.2,
@@ -64,7 +64,7 @@ return [
         [
             'name'      => 'Headphones KOSS',
             'barcode'   => 'JJD1405086116611',
-            'cell'      => 'A.7.3.1',
+            'cell'      => 'A.30.3.1',
             'weight'        => 215,
             'dimension_x'   => 16.3,
             'dimension_y'   => 10.7,
@@ -77,7 +77,7 @@ return [
         [
             'name'      => 'Incoming package U48340',
             'barcode'   => '02113117000387',
-            'cell'      => 'B.2.6.4',
+            'cell'      => 'A.30.6.4',
             'weight'        => 10420,
             'dimension_x'   => 59,
             'dimension_y'   => 50,
@@ -90,7 +90,7 @@ return [
         [
             'name'      => 'Incoming package U26704',
             'barcode'   => '953222475202',
-            'cell'      => 'B.2.6.5',
+            'cell'      => 'A.27.6.5',
             'weight'        => 460,
             'dimension_x'   => 22,
             'dimension_y'   => 16,

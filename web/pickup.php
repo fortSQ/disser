@@ -31,12 +31,14 @@
             </tbody>
         </table>
 
-        <button class="btn btn-outline-success"><i class="fa fa-angle-double-right"></i> Следующий забор</button>
+        <div class="form-group">
+            <button class="btn btn-outline-success"><i class="fa fa-angle-double-right"></i> Следующий забор</button>
+        </div>
     </div>
 
     <div class="col-md-4 text-right">
         <figure class="figure">
-            <img class="figure-img img-fluid rounded" src="img/selin.jpg" style="height:300px">
+            <img class="figure-img img-fluid rounded" src="img/route.png">
             <figcaption class="figure-caption">&mdash; Маршрут движения</figcaption>
         </figure>
     </div>
