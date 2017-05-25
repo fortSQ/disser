@@ -33,7 +33,7 @@
                 <th>Штрих-код</th>
                 <th>Габариты</th>
                 <th>Тип</th>
-                <th>Дата прибытия</th>
+                <th class="text-nowrap">Дата прибытия</th>
                 <th>Ячейка</th>
             </tr>
             </thead>
@@ -48,9 +48,10 @@
                     <td><?= DateTime::createFromFormat('Y-m-d', $product->add_date)->format('d.m.Y') ?></td>
                     <td>
                         <div class="input-group">
-                            <select class="form-control custom-select">
-                                <? foreach ($config['cells'] as $cell): ?>
-                                    <option><?= $cell ?></option>
+                            <select class="form-control custom-select" style="min-width:7em">
+                                <? $recommendation = rand(0, count($config['cells'])) ?>
+                                <? foreach ($config['cells'] as $i => $cell): ?>
+                                    <option value="<?= $i ?>" <? if ($i == $recommendation): ?>selected<? endif ?>><?= $cell ?></option>
                                 <? endforeach ?>
                             </select>
                             <span class="input-group-btn">
